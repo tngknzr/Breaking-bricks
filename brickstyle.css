@@ -1,3 +1,40 @@
 h1 {
     color: red;
 }
+
+/* #visual {
+    border: 5px solid black;
+} */
+.grid {
+    position: absolute;
+    width: 900px;
+    height: 500px;
+    border: 10px solid black;
+    margin-top: 80px;
+}
+
+.block {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: brown;
+    border: 3px solid greenyellow;
+
+}
+
+.user {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    border: 3px solid rgb(119, 2, 84);
+
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: palevioletred;
+}
