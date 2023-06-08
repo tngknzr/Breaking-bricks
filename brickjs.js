@@ -10,6 +10,7 @@ const boardHeight = 500
 let timerId
 let xDirection = -2
 let yDirection = 2
+let score = 0
 
 const userStart = [380, 10];
 let currentPosition = userStart;
@@ -157,7 +158,7 @@ function moveUser(e) {
     switch (e.key) {
         case 'ArrowLeft':
             if (currentPosition[0] > 0) {
-                currentPosition[0] -= 10
+                currentPosition[0] -= 20
                 drawUser()
             }
 
@@ -166,7 +167,7 @@ function moveUser(e) {
 
         case 'ArrowRight':
             if (currentPosition[0] < boardWidth - blockWidth) {
-                currentPosition[0] += 10
+                currentPosition[0] += 20
                 drawUser()
 
             }
@@ -190,25 +191,46 @@ function moveBall() {
     ballCurrentPosition[0] += xDirection
     ballCurrentPosition[1] += yDirection
     drawBall()
-    chechForCollisions()
+    checkForCollisions()
 }
-timerid = setInterval(moveBall, 30)
+timerId = setInterval(moveBall, 10)
 // check for colission
-function chechForCollisions() {
+function checkForCollisions() {
     // check for block collisions
     for (let i = 0; i < blocks.length; i++) {
         if (
             (ballCurrentPosition[0] > blocks[i].bottomLeft[0] && ballCurrentPosition[0] < blocks[i].bottomRight[0]) &&
-            ((ballCurrentPosition[1] + ballDiameter) > blocks[i].bottomLeft[1] && ballCurrentPosition[1 < blocks[1].topLeft])
+            ((ballCurrentPosition[1] + ballDiameter) > blocks[i].bottomLeft[1] && ballCurrentPosition[1] < blocks[1].topLeft[1])
         ) {
             const allBlocks = Array.from(document.querySelectorAll('.block'))
             allBlocks[i].classList.remove('block')
             blocks.splice(i, 1)
             changeDirection()
+            score++
+            scoreDisplay.innerHTML = score
+            // check for win
+
+            if (blocks.length === 0) {
+                scoreDisplay.innerHTML = "Cant belive, a human won LOL"
+                clearInterval(timerId)
+                document.removeEventListener('keydown', moveUser)
+            }
+
 
 
         }
     }
+
+
+    // check for user collisions
+    if (
+        (ballCurrentPosition[0] > currentPosition[0] && ballCurrentPosition[0] < currentPosition[0] + blockWidth) &&
+        (ballCurrentPosition[1] > currentPosition[1] && ballCurrentPosition[1] < currentPosition[1] + blockHeight)
+
+    ) {
+        changeDirection()
+    }
+
 
 
 
@@ -221,6 +243,8 @@ function chechForCollisions() {
 
         changeDirection()
     }
+
+
 
 
 
