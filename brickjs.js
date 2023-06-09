@@ -5,8 +5,8 @@ const scoreDisplay = document.querySelector('#score')
 const blockWidth = 100
 const blockHeight = 20
 const ballDiameter = 20
-const boardWidth = 900
-const boardHeight = 500
+const boardWidth = 780
+const boardHeight = 400
 let timerId
 let xDirection = -2
 let yDirection = 2
@@ -38,7 +38,6 @@ const blocks = [
     new Block(450, 270),
     new Block(560, 270),
     new Block(670, 270),
-    new Block(780, 270),
     new Block(10, 240),
     new Block(120, 240),
     new Block(230, 240),
@@ -46,7 +45,6 @@ const blocks = [
     new Block(450, 240),
     new Block(560, 240),
     new Block(670, 240),
-    new Block(780, 240),
     new Block(10, 210),
     new Block(120, 210),
     new Block(230, 210),
@@ -54,7 +52,6 @@ const blocks = [
     new Block(450, 210),
     new Block(560, 210),
     new Block(670, 210),
-    new Block(780, 210),
     new Block(10, 300),
     new Block(120, 300),
     new Block(230, 300),
@@ -62,7 +59,6 @@ const blocks = [
     new Block(450, 300),
     new Block(560, 300),
     new Block(670, 300),
-    new Block(780, 300),
     new Block(10, 330),
     new Block(120, 330),
     new Block(230, 330),
@@ -70,7 +66,6 @@ const blocks = [
     new Block(450, 330),
     new Block(560, 330),
     new Block(670, 330),
-    new Block(780, 330),
     new Block(10, 360),
     new Block(120, 360),
     new Block(230, 360),
@@ -78,40 +73,8 @@ const blocks = [
     new Block(450, 360),
     new Block(560, 360),
     new Block(670, 360),
-    new Block(780, 360),
-    new Block(10, 390),
-    new Block(120, 390),
-    new Block(230, 390),
-    new Block(340, 390),
-    new Block(450, 390),
-    new Block(560, 390),
-    new Block(670, 390),
-    new Block(780, 390),
-    new Block(10, 420),
 
-    new Block(120, 420),
-    new Block(230, 420),
-    new Block(340, 420),
-    new Block(450, 420),
-    new Block(560, 420),
-    new Block(670, 420),
-    new Block(780, 420),
-    new Block(10, 450),
-    new Block(120, 450),
-    new Block(230, 450),
-    new Block(340, 450),
-    new Block(450, 450),
-    new Block(560, 450),
-    new Block(670, 450),
-    new Block(780, 450),
-    new Block(10, 478),
-    new Block(120, 478),
-    new Block(230, 478),
-    new Block(340, 478),
-    new Block(450, 478),
-    new Block(560, 478),
-    new Block(670, 478),
-    new Block(780, 478),
+
 
 
 
@@ -158,7 +121,7 @@ function moveUser(e) {
     switch (e.key) {
         case 'ArrowLeft':
             if (currentPosition[0] > 0) {
-                currentPosition[0] -= 20
+                currentPosition[0] -= 30
                 drawUser()
             }
 
@@ -167,7 +130,7 @@ function moveUser(e) {
 
         case 'ArrowRight':
             if (currentPosition[0] < boardWidth - blockWidth) {
-                currentPosition[0] += 20
+                currentPosition[0] += 30
                 drawUser()
 
             }
@@ -193,7 +156,7 @@ function moveBall() {
     drawBall()
     checkForCollisions()
 }
-timerId = setInterval(moveBall, 10)
+timerId = setInterval(moveBall, 18)
 // check for colission
 function checkForCollisions() {
     // check for block collisions

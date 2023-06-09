@@ -3,7 +3,7 @@
     ;
     letter-spacing: -.065em;
     position: relative;
-    color: #000000;
+    color: #a30909;
     display: inline-block;
     margin: 0;
 
@@ -18,9 +18,9 @@
     letter-spacing: normal;
     font-size: .2em;
     padding: 7px 7px;
-    color: #d46c0be8;
+    color: #d40b58e8;
     border-radius: 6pc;
-    border: 3px solid rgb(27, 50, 61);
+    border: 3px solid rgb(61, 27, 48);
     text-shadow: 0 4px 1px rgba(0, 0, 0, .65);
     box-shadow: inset 0 0 3px rgba(0, 0, 0, .6);
     background-color: #a60000;
@@ -28,19 +28,11 @@
 }
 
 footer>a {
-    /* border-radius: 50px;
-    border: 5px inset rgb(4, 1, 196);
-    
-    
-    color: rgb(219, 69, 219);
-    background-color: rgb(4, 97, 66);
-    position: sticky;
-    bottom: 0; */
-    /* margin: 5%; */
+
     padding: 3px;
     text-decoration: none;
     display: block;
-    /* margin: 5%; */
+
     width: 100%;
     height: 50px;
     font-family: Helvetica;
@@ -56,11 +48,8 @@ footer>a {
     text-align: center;
     line-height: 50px;
     font-weight: bold;
-    /* position: absolute; */
-    /* bottom: 0; */
-    /* margin-top: 5%; */
-}
 
+}
 
 
 
@@ -70,7 +59,7 @@ section>article {
     width: 50%;
     height: 50%;
     padding: 20px;
-    /* border: 10px rgb(126, 22, 121) groove; */
+
     color: rgb(241, 145, 237);
     box-sizing: border-box;
     background-color: rgba(1, 27, 37, 0.7);
@@ -86,10 +75,7 @@ section>article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: ;
-    height: ; */
 
-    /* background-color: #3f9e99; */
 
 
 
